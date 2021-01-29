@@ -48,7 +48,7 @@ class VideoSource:
         self._open_video_source()
 
     def _open_video_source(self):
-        self._vid_cap = cv2.VideoCapture(self._filename, cv2.CAP_GSTREAMER)
+        self._vid_cap = cv2.VideoCapture(self._filename)
         if self._vid_cap is None or not self._vid_cap.isOpened():
             logging.error("Error opening video source: {}".format(self._filename))
             sys.exit(1)

@@ -4,9 +4,9 @@ WORK_DIR=$(dirname $(readlink -f "$0"))
 SAMPLE_DIR=$(dirname $WORK_DIR)
 SAMPLE_BUILD_ARGS=$(env | cut -f1 -d= | grep -E '_(proxy|REPO|VER)$' | sed 's/^/--build-arg / ' | tr '\n' ' ')
 MODELS="models/models.list.yml"
-BASE_IMAGE=
+BASE_IMAGE="--base openvisualcloud/xeone3-ubuntu1804-analytics-gst:20.10"
 OMZ_VERSION=
-TAG="video-analytics-serving:0.4.1-dlstreamer-edge-ai-extension"
+TAG="video-analytics-serving:0.4.1.1-dlstreamer-edge-ai-extension"
 
 #Get options passed into script
 function get_options {
